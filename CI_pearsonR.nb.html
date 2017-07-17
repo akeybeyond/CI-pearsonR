@@ -142,7 +142,7 @@ $(document).ready(function () {
 </style>
 <script>
 $(document).ready(function () {
-  window.initializeSourceEmbed("CI-pearsonR.Rmd");
+  window.initializeSourceEmbed("CI_pearsonR.Rmd");
   window.initializeCodeFolding("show" === "show");
 });
 </script>
@@ -189,27 +189,10 @@ z \pm (z-value)(\sigma)
 <p>We can turn this into a function to make use of this transformation.</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucnRveiA8LSBmdW5jdGlvbihwZWFyc29uX3Ipe1xuICAwLjUqbG9nKCgxK3BlYXJzb25fcikvKDEtcGVhcnNvbl9yKSlcbiAgXG59XG5ydG96X2NpIDwtIGZ1bmN0aW9uKHBlYXJzb25fciwgbiwgel92YWx1ZSl7XG4gIHIgPSBydG96KHBlYXJzb25fcilcbiAgc2QgPSBzcXJ0KDEvKG4tMykpXG4gIGNpX2xvdyA9IHIgLSBzZCp6X3ZhbHVlXG4gIGNpX2hpZ2ggPSByICsgc2Qqel92YWx1ZVxuICBjaSA9IGMoY2lfbG93LCBjaV9oaWdoKVxuICByZXR1cm4oY2kpXG59XG5ydG96X2NpIDwtIGZ1bmN0aW9uKHBlYXJzb25fciwgbiwgel92YWx1ZSl7XG4gIHIgPSBydG96KHBlYXJzb25fcilcbiAgc2QgPSBzcXJ0KDEvKG4tMykpXG4gIGNpX2xvdyA9IHIgLSBzZCp6X3ZhbHVlXG4gIGNpX2hpZ2ggPSByICsgc2Qqel92YWx1ZVxuICBjaSA9IGMoY2lfbG93LCBjaV9oaWdoKVxuICByZXR1cm4oY2kpXG59XG5gYGAifQ== -->
-<pre class="r"><code>rtoz &lt;- function(pearson_r){
-  0.5*log((1+pearson_r)/(1-pearson_r))
-  
-}
-rtoz_ci &lt;- function(pearson_r, n, z_value){
-  r = rtoz(pearson_r)
-  sd = sqrt(1/(n-3))
-  ci_low = r - sd*z_value
-  ci_high = r + sd*z_value
-  ci = c(ci_low, ci_high)
-  return(ci)
-}
-rtoz_ci &lt;- function(pearson_r, n, z_value){
-  r = rtoz(pearson_r)
-  sd = sqrt(1/(n-3))
-  ci_low = r - sd*z_value
-  ci_high = r + sd*z_value
-  ci = c(ci_low, ci_high)
-  return(ci)
-}</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYGBgclxucnRveiA8LSBmdW5jdGlvbihwZWFyc29uX3Ipe1xuICAwLjUqbG9nKCgxK3BlYXJzb25fcikvKDEtcGVhcnNvbl9yKSlcbiAgXG59XG5ydG96X2NpIDwtIGZ1bmN0aW9uKHBlYXJzb25fciwgbiwgel92YWx1ZSl7XG4gIHIgPSBydG96KHBlYXJzb25fcilcbiAgc2QgPSBzcXJ0KDEvKG4tMykpXG4gIGNpX2xvdyA9IHIgLSBzZCp6X3ZhbHVlXG4gIGNpX2hpZ2ggPSByICsgc2Qqel92YWx1ZVxuICBjaSA9IGMoY2lfbG93LCBjaV9oaWdoKVxuICByZXR1cm4oY2kpXG59XG5ydG96X2NpIDwtIGZ1bmN0aW9uKHBlYXJzb25fciwgbiwgel92YWx1ZSl7XG4gIHIgPSBydG96KHBlYXJzb25fcilcbiAgc2QgPSBzcXJ0KDEvKG4tMykpXG4gIGNpX2xvdyA9IHIgLSBzZCp6X3ZhbHVlXG4gIGNpX2hpZ2ggPSByICsgc2Qqel92YWx1ZVxuICBjaSA9IGMoY2lfbG93LCBjaV9oaWdoKVxuICByZXR1cm4oY2kpXG59XG5gYGBcbmBgYCJ9 -->
+<p><code>r</code>r rtoz &lt;- function(pearson_r){ 0.5*log((1+pearson_r)/(1-pearson_r))</p>
+<p>} rtoz_ci &lt;- function(pearson_r, n, z_value){ r = rtoz(pearson_r) sd = sqrt(1/(n-3)) ci_low = r - sd<em>z_value ci_high = r + sd</em>z_value ci = c(ci_low, ci_high) return(ci) } rtoz_ci &lt;- function(pearson_r, n, z_value){ r = rtoz(pearson_r) sd = sqrt(1/(n-3)) ci_low = r - sd<em>z_value ci_high = r + sd</em>z_value ci = c(ci_low, ci_high) return(ci) }</p>
+<pre><code></code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 

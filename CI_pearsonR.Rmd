@@ -1,29 +1,31 @@
 ---
 title: "Confidence intervals around Pearson r’s"
-output: html_notebook
+output: github_document
 ---
 
 First we use Fisher's r-to-z transformation which is as follow:
 
-$$
-z = 0.5 ln(\dfrac{1+r}{1-r})
-$$
+
+![](http://latex.codecogs.com/gif.latex?z%20%3D%200.5%20%5Cln%7B%5Cfrac%7B1&plus;r%7D%7B1-r%7D%7D)
+
+
+
+
 
 z is approximately normally distributed, with an  expectation equal to 
 
-$$
-0.5 ln(\dfrac{1+p}{1-p})
-$$
+![](http://latex.codecogs.com/gif.latex?z%20%3D%200.5%20%5Cln%7B%5Cfrac%7B1&plus;p%7D%7B1-p%7D%7D)
+
+
 where p is the population correlation of which r is an estimate of. The standard deviation is 
-$$
-\sigma = \sqrt{\dfrac{1}{n-3}}
-$$
+
+
+![](http://latex.codecogs.com/gif.latex?%5Csigma%20%3D%20%5Csqrt%7B%5Cfrac%7B1%7D%7Bn-3%7D%7D)
+
 
 So we can obtain confidence intervals using 
 
-$$
-z \pm (z-value)(\sigma)
-$$
+$$z \pm (z-value)(\sigma)$$
 
 
 We can turn this into a function to make use of this transformation.
